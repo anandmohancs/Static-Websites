@@ -1,0 +1,602 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
+/* Flashcard Container */
+.flashcard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative; /* Enable relative positioning for badge placement */
+  overflow: visible; /* Ensure the badge outside the container is visible */
+}
+
+/* Common Star Badge Styling */
+.flashcard-container .badge {
+  position: absolute;
+  top: -35px; /* Move badge further up */
+  background-color: #ff5722; /* Badge background color */
+  color: #fff; /* Badge text color */
+  font-size: 16px; /* Font size for ₹500 */
+  font-weight: bold; /* Make text bold */
+  text-align: center; /* Center-align text */
+  padding: 15px; /* Padding for a neat design */
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 
+    50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
+  ); /* Create star shape */
+  z-index: 3; /* Ensure badge appears above flashcard */
+  width: 75px; /* Badge size */
+  height: 75px; /* Badge size */
+  display: flex;
+  justify-content: center; /* Center-align content horizontally */
+  align-items: center; /* Center-align content vertically */
+  line-height: 1; /* Ensure good text spacing */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Optional shadow */
+  box-sizing: border-box; /* Include padding in the dimensions */
+  pointer-events: none; /* Prevent interaction with the badge */
+}
+
+/* Left Side Badge */
+.flashcard-container .badge-left {
+  left: -35px; /* Position badge to the left */
+}
+
+/* Right Side Badge */
+.flashcard-container .badge-right {
+  right: -35px; /* Position badge to the right */
+}
+
+/* Flashcard Styling */
+.flashcard-container article.flashcard {
+  border: 1px rgba(255, 255, 255, 0.03) solid;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  width: 300px; /* Fixed width for flashcards */
+  height: 250px; /* Fixed height for flashcards */
+  position: relative;
+  overflow: visible; /* Ensure the badge is visible outside */
+  background: transparent;
+}
+
+.flashcard-container article.flashcard input[type=checkbox] {
+  display: none;
+}
+
+.flashcard-container article.flashcard input[type=checkbox]:checked ~ label section.front {
+  height: 0%;
+}
+
+.flashcard-container article.flashcard input[type=checkbox]:checked ~ label section.back {
+  height: 100%;
+}
+
+.flashcard-container article.flashcard label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.flashcard-container article.flashcard section {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0; /* Ensure padding doesn’t interfere with content alignment */
+  overflow: hidden;
+  transition: all 0.9s linear 0s;
+}
+
+.flashcard-container article.flashcard section.front {
+  background: #F0F0F0; /* Background color for the front side */
+  z-index: 2;
+}
+
+.flashcard-container article.flashcard section.front img {
+  width: 100%; /* Ensure image covers the flashcard width */
+  height: 100%; /* Ensure image covers the flashcard height */
+  object-fit: cover; /* Prevent image distortion */
+}
+
+.flashcard-container article.flashcard section.back {
+  background: linear-gradient(135deg, #07caec, #037043); /* Gradient color */
+  color: #fff; /* Text color for better readability */
+  z-index: 1;
+  overflow-y: auto; /* Enable scrolling for long content */
+  padding: 20px; /* Add padding for text readability */
+  box-sizing: border-box; /* Include padding in dimensions */
+  display: flex; /* Use flexbox to align content */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: flex-start; /* Align content to start from the top */
+  text-align: left; /* Align text to the left */
+  line-height: 1.5; /* Ensure good spacing between text lines */
+  transition: background 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.flashcard-container article.flashcard section.back:hover {
+  background: linear-gradient(135deg, #ff512f, #2c0215); /* Slightly different gradient on hover */
+}
+
+/* Custom Card Styling */
+.custom-card {
+  display: flex;
+  align-items: center;
+  background-color: #eaf8f1; /* Light green background */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  max-width: 600px; /* Adjust width as needed */
+  margin: auto; /* Center alignment */
+}
+
+.custom-card .text-content {
+  flex: 1;
+  padding: 10px;
+}
+
+.custom-card .text-content h3 {
+  font-size: 1.5rem;
+  color: #2c6232; /* Dark green */
+  margin-bottom: 10px;
+}
+
+.custom-card .text-content .subtitle {
+  font-style: italic;
+  color: #4d774e; /* Slightly lighter green */
+  margin-bottom: 10px;
+}
+
+.custom-card .text-content p {
+  font-size: 0.9rem;
+  color: #4d774e;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.custom-card .image-content {
+  position: relative;
+  flex: 1;
+  clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 70%);
+  overflow: hidden;
+}
+
+.custom-card .image-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.custom-card .price-tag {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #2c6232; /* Dark green */
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.package-card img {
+  border-radius: 10px;
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+}
+
+.package-card h5 {
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.package-details ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.table th, .table td {
+  text-align: center;
+}
+
+.badge {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.food-combo-card {
+  background-color: #eaf8f1;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.food-combo-card h6 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2c6232;
+}
+
+.table th, .table td {
+  text-align: center;
+}
+
+.col-lg-1-5 {
+  flex: 0 0 12.5%; /* 12.5% width for 8 columns */
+  max-width: 12.5%;
+}
+
+.package-card img {
+  border-radius: 10px;
+  object-fit: cover;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+}
+
+.package-card h5 {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
+.food-combo-title {
+  white-space: nowrap; /* Prevent wrapping */
+  margin-bottom: 10px; /* Add spacing below "Option 1" and "Option 2" */
+  margin-right: 10px;
+  display: inline-block; /* Ensure spacing is applied correctly */
+  font-size: 1.2rem; /* Adjust font size if needed */
+}
+
+
+/* User Initials */
+.user {
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+/* Color Classes for User Initials */
+.bg-primary {
+  background-color: #007bff !important;
+}
+
+.bg-secondary {
+  background-color: #6c757d !important;
+}
+
+.bg-success {
+  background-color: #28a745 !important;
+}
+
+.bg-warning {
+  background-color: #ffc107 !important;
+}
+
+/* Feedback Slider */
+.feedback-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.feedback-slider__item {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 10px;
+}
+
+.feedback-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Custom Bootstrap Grid */
+/* Custom CSS for 9-Column Layout */
+/* Membership Section Specific */
+#tickets .package-card {
+  padding: 5px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#tickets .package-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#tickets .image-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+#tickets .image-container img {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+#tickets .image-container:hover img {
+  transform: scale(1.05);
+}
+
+#tickets .price-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Layout Adjustments */
+#tickets .col-lg-2-4 {
+  flex: 0 0 20%; /* 100% / 5 = 20% */
+  max-width: 20%;
+}
+
+#tickets .col-lg-3 {
+  flex: 0 0 25%; /* 100% / 4 = 25% */
+  max-width: 25%;
+}
+
+@media (max-width: 992px) {
+  #tickets .col-lg-2-4,
+  #tickets .col-lg-3 {
+    flex: 0 0 50%; /* Two images per row on tablets */
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  #tickets .col-lg-2-4,
+  #tickets .col-lg-3 {
+    flex: 0 0 100%; /* One image per row on smaller screens */
+    max-width: 100%;
+  }
+}
+
+/* Background New Banner and Mobile Banner  */
+/* Hero background for desktop */
+.hero-slider__item {
+  background-image: url("../images/desktop-banner.png") !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+@media (max-width: 768px) {
+  .hero-slider__item {
+    background-image: url("../images/mobile-banner.png") !important;
+  }
+}
+
+/* Background Font Style */
+.hero-slider__title {
+  font-family: Impact, sans-serif !important;
+  font-size: 48px !important;
+  font-weight: bold !important;
+  color: #fff !important;
+}
+
+.sub-heading {
+  font-family: 'Helvetica Neue', sans-serif !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  color: #ff5722 !important;
+}
+
+/* Header Color and Menu color changes */
+header.header-fixed {
+  background-color: #fff !important;
+}
+
+header.header-fixed .primary-menu__link {
+  color: #000 !important;
+}
+
+header.header-fixed .primary-menu__link:hover {
+  color: #000 !important;
+}
+
+/* Floating Book Now Button */
+.floating-book-tickets {
+  display: none !important; /* Hidden by default */
+  position: fixed;
+  bottom: 60px; /* Adjust vertical position as needed */
+  right: 20px;
+  width: 60px; /* Fixed circle size */
+  height: 60px;
+  padding: 5px; /* Internal padding */
+  box-sizing: border-box; /* Include padding in the fixed size */
+  background-color: #86c305; /* Background color */
+  border-radius: 50%;
+  color: #fff; /* Font color changed to white */
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  z-index: 1000;
+  
+  /* Use flexbox to center the text and stack in a column */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  /* Tight line spacing so there's no extra gap between the lines */
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .floating-book-tickets {
+    display: flex !important; /* Show only on mobile devices */
+  }
+}
+
+
+#gallary .section__head {
+  margin-bottom: 20px;
+}
+
+.subscribe-section__content {
+  padding: 60px 20px !important;
+  background: #d4ffda !important;
+}
+
+
+@media screen and (min-width: 1200px) {
+  .subscribe-section__content::after {
+    content: none !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .subscribe-section::after {
+    display: none !important;
+  }
+}
+
+.subscribe-section__content {
+  text-align: center !important;
+}
+
+.subscribe-section__content .row {
+  justify-content: center !important;
+}
+
+.subscribe-section__content .logo {
+  display: inline-block;
+  margin: 0 auto !important;
+}
+
+.subscribe-section__content .logo img {
+  max-width: 300px;  /* Adjust this value to make the logo bigger or smaller */
+  width: 100%;
+  height: auto;
+}
+
+.subscribe-section__content {
+  padding: 60px 20px !important;
+  background: #d4ffda !important;
+  text-align: center !important;
+}
+
+
+.subscribe-section__content .row {
+  justify-content: center !important;
+}
+
+.subscribe-section__content .logo {
+  display: inline-block;
+  margin: 0 auto !important;
+}
+
+.subscribe-section__content .logo img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767.98px) {
+  /* Adjust section headings */
+  #attractions .section__title {
+    font-size: 24px !important;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  #attractions .section__subtitle {
+    font-size: 16px !important;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  /* Make each custom card stack vertically */
+  #attractions .custom-card {
+    flex-direction: column !important;
+    padding: 15px !important;
+    margin: 10px auto !important;
+    max-width: 100% !important;
+    box-shadow: none; /* Optional: remove shadow for a cleaner mobile look */
+  }
+  
+  /* Remove clip-path for image content and ensure image fills the width */
+  #attractions .custom-card .image-content {
+    clip-path: none !important;
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+  
+  #attractions .custom-card .image-content img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+    border-radius: 10px; /* retain rounded corners if desired */
+  }
+  
+  /* Center text content */
+  #attractions .custom-card .text-content {
+    padding: 10px 0 !important;
+    text-align: center !important;
+  }
+  
+  /* Adjust price tag to be part of the flow */
+  #attractions .custom-card .price-tag {
+    position: static !important;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .animal-list {
+    display: none !important;
+  }
+}
+
+
+/* Override to make sure feedback text appears correctly */
+.feedback-card__body .feedback-card__text {
+  display: block !important; /* Ensure it appears */
+  -webkit-line-clamp: unset !important;
+  -webkit-box-orient: unset !important;
+  white-space: normal !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 60px; /* Default height */
+  transition: max-height 0.3s ease-in-out;
+}
+
+/* Expanded state */
+.feedback-card__body .feedback-card__text.expanded {
+  max-height: none !important; /* Show full text when expanded */
+}
+
+/* Hide View More initially if the text is already short */
+.feedback-card__body .view-more.hidden {
+  display: none;
+}
+
+/* Ensure Slick slider works properly */
+.feedback-slider .slick-list {
+  min-height: auto !important;
+}

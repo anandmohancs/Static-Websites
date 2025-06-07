@@ -1,0 +1,34 @@
+/* Template Name: Selfown - Responsive personal Page Template
+   Author: Mannatthemes
+   Version: 1.0.0
+*/
+
+
+/**********************
+01.General
+
+***********************/
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/bootstrap";
+
+@import "variables";
+@import "general";
+@import "helper";
+@import "components";
+@import "menu";
+@import "hero";
+@import "form";
+@import "switcher";
+@import "footer";
+@import "text-roted";
+@import "timeline";
+
+
+// color
+@import "colors/info";
+@import "colors/orange";
+@import "colors/purple";
+@import "colors/warning";
+@import "colors/success";
+@import "colors/warning";

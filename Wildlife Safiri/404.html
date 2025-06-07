@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>404 Page Not Found</title>
+        
+        <!-- favicon -->
+        <link rel="icon" href="favicons/images-favicon.png" sizes="16x16" type="image/png">
+        
+        <!-- External CSS Libraries -->
+        <link rel="stylesheet" href="css/lib-bootstrap.min.css">
+        <link rel="stylesheet" href="css/lib-font-awesome.css">
+        <link rel="stylesheet" href="css/lib-line-awesome.css">
+        <link rel="stylesheet" href="css/lib-slick.css">
+        <link rel="stylesheet" href="css/lib-magnific-popup.css">
+        <link rel="stylesheet" href="css/lib-odometer-theme-default.css">
+        <link rel="stylesheet" href="css/css-main.css">
+        <link rel="stylesheet" href="css/flash-cards.css">
+        
+        <style>
+            body, html {
+                height: 100%;
+                margin: 0;
+                overflow: hidden; /* Prevent unnecessary scrolling */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .section {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh; /* Full height for proper alignment */
+                max-width: 1200px;
+                width: 100%;
+                margin: 0 auto;
+                padding: 20px;
+                text-align: center;
+            }
+
+            img.img-fluid {
+                max-width: 80%;
+                height: auto;
+            }
+
+            /* Responsive Adjustments */
+            @media (max-width: 1440px) {
+                .section { max-width: 1000px; }
+            }
+
+            @media (max-width: 1280px) {
+                .section { max-width: 900px; }
+            }
+
+            @media (max-width: 1024px) {
+                .section { max-width: 800px; }
+            }
+        </style>
+    </head>
+<body> 
+    <div class="section">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-10 col-xl-8">
+                    <h2 class="section__title mt-0 text-center">
+                        Opps! Page Not <span>Found</span>
+                    </h2>
+                    <p class="section__para mx-auto text-center">
+                        Your gift to Viserlife Zoo plays an important role in our mission. Together, our footprint here in Viserlife translates to action.
+                    </p>
+                    <div class="text-center my-5">
+                        <img src="images/images-error.png" alt="image" class="img-fluid">
+                    </div>
+                    <div class="text-center">
+                        <a href="index.html" class="btn btn--xl btn--base text-uppercase sm-text">Go back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

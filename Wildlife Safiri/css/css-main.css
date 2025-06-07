@@ -447,7 +447,6 @@ input[type=number] {
 
 .logo__is {
     width: 100%;
-    height: 100%;
     object-fit: contain;
 }
 
@@ -2601,7 +2600,7 @@ textarea.form--control:focus {
     }
 
     .hero-slider__content::after {
-        content: "";
+        
         position: absolute;
         left: 100%;
         top: 0;
