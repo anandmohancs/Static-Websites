@@ -339,7 +339,7 @@ padding: 18px 20px;
 .header-two .menu-area .btn{
     border-width: 2px;
     border-color:#EAEAEA;
-    background: #fff;
+    background: #ffffff;
 }
 .menu-area .btn.active,.menu-area .btn:hover{
   background: #21222E;
